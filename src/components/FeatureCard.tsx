@@ -1,4 +1,3 @@
-import { Children } from "react";
 import { twMerge } from "tailwind-merge";
 
 export default function FeatureCard(props: {
@@ -7,7 +6,7 @@ export default function FeatureCard(props: {
     children?: React.ReactNode;
     className?: string;
 }) {
-    const { title, description, className, children, ...otherProps } = props;
+    const { title, description, className, children } = props;
     return (
         <div
             className={twMerge(
