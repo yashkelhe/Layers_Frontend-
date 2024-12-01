@@ -59,8 +59,13 @@ export default function Integrations() {
                     </div>
                     <div>
                         <div
-                            className="h-[400px] lg:h-[800px] lg:mt-0 mt-8 overflow-hidden [mask-image:linear-gradient(to_bottom, transparent,black_10%,black_90%,transparent
-                        )]  grid md:grid-cols-2 gap-4 "
+                            style={{
+                                maskImage:
+                                    "linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)",
+                                WebkitMaskImage:
+                                    "linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)",
+                            }}
+                            className="h-[400px] lg:h-[800px] lg:mt-0 mt-8 overflow-hidden   grid md:grid-cols-2 gap-4 "
                         >
                             <IntegrationColumn integration={integrations} />
                             <IntegrationColumn
