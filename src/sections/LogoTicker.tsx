@@ -37,10 +37,20 @@ export default function LogoTicker() {
                         WebkitMaskImage:
                             "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
                     }}
-                    className="overflow-hidden mt-12 "
+                    className="flex flex-none overflow-hidden mt-12"
                 >
-                    <motion.div className="flex gap-24 pr-24">
-                        {Array.from({ length: 2 }).map((_, i) => (
+                    <motion.div
+                        animate={{
+                            x: "-50%",
+                        }}
+                        transition={{
+                            duration: 30,
+                            ease: "linear",
+                            repeat: Infinity,
+                        }}
+                        className="flex gap-24 pr-24 "
+                    >
+                        {Array.from({ length: 3 }).map((_, i) => (
                             <React.Fragment key={i}>
                                 {logos.map((logo) => (
                                     <Image
