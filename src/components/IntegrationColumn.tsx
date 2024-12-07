@@ -4,6 +4,7 @@ import { type integrationsType } from "@/sections/Integrations";
 import Image from "next/image";
 import { twMerge } from "tailwind-merge";
 import { motion } from "framer-motion";
+import { Fragment } from "react";
 export default function IntegrationColumn(props: {
     integration: integrationsType;
     className?: string;
@@ -27,7 +28,7 @@ export default function IntegrationColumn(props: {
             className={twMerge("flex flex-col gap-4 pb-4  ", className)}
         >
             {Array.from({ length: 2 }).map((_, i) => (
-                <>
+                <Fragment key={i}>
                     {integration.map((inte) => (
                         <div
                             key={inte.name}
@@ -48,7 +49,7 @@ export default function IntegrationColumn(props: {
                             </p>
                         </div>
                     ))}
-                </>
+                </Fragment>
             ))}
         </motion.div>
     );

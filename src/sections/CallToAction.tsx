@@ -29,15 +29,6 @@ export default function CallToAction() {
             <div className="overflow-x-clip p-4 flex">
                 <motion.div
                     ref={scope}
-                    // animate={{
-                    //     x: "-50%",
-                    // }}
-                    // transition={{
-                    //     duration: 30,
-
-                    //     ease: "linear",
-                    //     repeat: Infinity,
-                    // }}
                     className="flex-none flex gap-16  pr-16 text-7xl font-medium  md:text-8xl group cursor-pointer"
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}
