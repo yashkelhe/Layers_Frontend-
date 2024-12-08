@@ -1,19 +1,23 @@
 "use client";
 import { AnimationPlaybackControls, motion, useAnimate } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 export default function CallToAction() {
     const [isHovered, setIsHovered] = useState(false);
     const [scope, animate] = useAnimate();
     const animation = useRef<AnimationPlaybackControls>();
 
-    useEffect(() => {
+    const animationHandler = useCallback(() => {
         animation.current = animate(
             scope.current,
             { x: "-50%" },
             { duration: 30, ease: "linear", repeat: Infinity }
         );
-    }, []);
+    }, [animate, scope]);
+
+    useEffect(() => {
+        animationHandler();
+    }, [animationHandler]);
 
     useEffect(() => {
         if (animation.current) {
@@ -34,7 +38,7 @@ export default function CallToAction() {
                     onMouseLeave={() => setIsHovered(false)}
                 >
                     {/* loop on 10 spans and taking the index only from it  */}
-                    {Array.from({ length: 10 }).map((_, i) => (
+                    {Array.from({ length: 10 }, (_, i) => (
                         <div className="flex items-center gap-16 " key={i}>
                             <span className="text-lime-400 text-7xl">
                                 &#10038;

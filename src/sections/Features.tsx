@@ -88,7 +88,7 @@ export default function Features() {
                                 <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent relative">
                                     <span className="">incredible</span>
                                     <video
-                                        src="/assets/gif-incredible.mp4"
+                                        src="gif-incredible.mp4"
                                         autoPlay
                                         loop
                                         muted
